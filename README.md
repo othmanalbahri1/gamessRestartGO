@@ -14,6 +14,7 @@ The script is command line based for simplicity. Please make sure that your inpu
 
 # How it works
 I've added as many comments as practically possible to help you understand what each part of the script does - to make it easy to modify. But in a nutshell, the script:
+- assumes that the run's `.inp`, `.log` and `.dat` files are all in the directory you specify.
 - checks the `.log` file for convergence. If converged, it outputs the optimized structure and its `$VEC` group to a new file `vec.txt` in the same directory. If not converged, it finds the `NSERCH` step with the lowest energy and extracts the corresponding coordinates and `$VEC` from the `.dat` file.
 - scrapes GAMESS instructions (` $` groups) from the original `.inp` file:
   - COBALT version: adds `! Restarted from XXXXX` to header.
