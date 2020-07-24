@@ -21,7 +21,7 @@ I've added as many comments as practically possible to help you understand what 
 - Writes a new `.inp` file that's ready for your restart run.
 
 ## Custom basis sets in `$DATA`:
-  Restarting GAMESS geometry optimization runs with custom `$DATA` basis sets is cumbersome. This script gives you the option to automatically insert basis set groups in `$DATA`. However, you need to modify the section of the script labled `# Extract coordiantes from minEnergyGeom and add custom basis sets` to suit your needs. The defaults are `APCseg-1` on C, N, O and `PCseg-1` on H atoms.
+  Restarting GAMESS geometry optimization runs with custom `$DATA` basis sets is cumbersome. This script gives you the option to automatically insert basis set groups in `$DATA`. However, you need to modify the section of the script labeled `# Extract coordiantes from minEnergyGeom and add custom basis sets` to suit your needs. The defaults are `APCseg-1` on C, N, O and `PCseg-1` on H atoms.
   
 # Disclaimer
 I've tried to anticipate mistakes and put guards in place to prevent input/output erros and overwritting existing files. However, I'd reccommend that you copy the directory that contains the files of the GAMESS run you'd like to restart to a new directory and run the scrip on these copied files just in case something goes wrong. Also, check that the output files make sense!
