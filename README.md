@@ -1,16 +1,16 @@
 # gamessRestartGO
-A script to automatically construct restart GAMESS goemetry optimization .inp files.
+A script to automatically construct restart GAMESS geometry optimization .inp files.
 
 There are two versions the script:
-1. If you run GAMESS on a supercomputer that uses [COBALT](https://www.anl.gov/mcs/cobalt-componentbased-lightweight-toolkit), use rstGO.py. This version adds the COBALT run queue ID to the restart .inp file to helo you keep track of restart seuquences.
-2. If your GAMESS workflow doesn't include COBALT (e.g. if you run GAMESS locally or on a supercomputer that uses different resource management software), use restGO_nonCobalt.py. In this case, you can implement your own way of keeping track of restart sequences; e.g. seperate folders or appending "rst1" ... etc to your new .inp file name.
+1. If you run GAMESS on a supercomputer that uses [COBALT](https://www.anl.gov/mcs/cobalt-componentbased-lightweight-toolkit), use rstGO.py. This version adds the COBALT run queue ID to the restart .inp file to help you keep track of restart sequences.
+2. If your GAMESS workflow doesn't include COBALT (e.g. if you run GAMESS locally or on a supercomputer that uses different resource management software), use restGO_nonCobalt.py. In this case, you can implement your own way of keeping track of restart sequences; e.g. separate folders or appending "rst1" ... etc to your new .inp file name.
 
 # Dependencies
 - This script was written and tested on Python 3.8.3.
 - `os`, `sys`, `re`, `operator` libraries.
 
 # Input
-The script is command line based for simplicity. Please make sure that your input/output directories and file names do not contain whitespaces.
+The script is command line based for simplicity. Please make sure that your input/output directories and file names do not contain white-spaces.
 
 # How it works
 I've added as many comments as practically possible to help you understand what each part of the script does - to make it easy to modify. But in a nutshell, the script:
@@ -21,9 +21,9 @@ I've added as many comments as practically possible to help you understand what 
 - Writes a new `.inp` file that's ready for your restart run.
 
 ## Custom basis sets in `$DATA`:
-  Restarting GAMESS geometry optimization runs with custom `$DATA` basis sets is cumbersome. This script gives you the option to automatically insert basis set groups in `$DATA`. However, you need to modify the section of the script labeled `# Extract coordiantes from minEnergyGeom and add custom basis sets` to suit your needs. The defaults are `APCseg-1` on C, N, O and `PCseg-1` on H atoms.
+  Restarting GAMESS geometry optimization runs with custom `$DATA` basis sets is cumbersome. This script gives you the option to automatically insert basis set groups in `$DATA`. However, you need to modify the section of the script labelled `# Extract coordinates from minEnergyGeom and add custom basis sets` to suit your needs. The defaults are `APCseg-1` on C, N, O and `PCseg-1` on H atoms.
   
 # Disclaimer
-I've tried to anticipate mistakes and put guards in place to prevent input/output erros and overwritting existing files. However, I'd reccommend that you copy the directory that contains the files of the GAMESS run you'd like to restart to a new directory and run the scrip on these copied files just in case something goes wrong. Also, check that the output files make sense!
+I've tried to anticipate mistakes and put guards in place to prevent input/output errors and overwriting existing files. However, I'd recommend that you copy the directory that contains the files of the GAMESS run you'd like to restart to a new directory and run the scrip on these copied files just in case something goes wrong. Also, check that the output files make sense!
 
 I've written this script mainly for personal use but put it here in case it's useful to others - use at your own risk! If you catch bugs, have questions, or need minor modifications please add an issue and I'll do my best to help.
