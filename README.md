@@ -17,7 +17,7 @@ I've added as many comments as practically possible to help you understand what 
 - assumes that the run's `.inp`, `.log` and `.dat` files are all in the directory you specify.
 - checks the `.log` file for convergence. If converged, it outputs the optimized structure and its `$VEC` group to a new file `vec.txt` in the same directory. If not converged, it finds the `NSERCH` step with the lowest energy and extracts the corresponding coordinates and `$VEC` from the `.dat` file.
 - scrapes GAMESS instructions (` $` groups) from the original `.inp` file:
-  - COBALT version: adds `! Restarted from XXXXX` to header.
+  - COBALT version: adds `! Restarted from XXXXX` to header, where `XXXXX` is the queue id number of the original `.inp` file.
   - All versions: counts `NORB` of extracted `$VEC` and adds/updates ` $GUESS` group in header.
 - Writes a new `.inp` file that's ready for your restart run.
 
