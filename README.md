@@ -1,5 +1,5 @@
 # gamessRestartGO
-A script to automatically construct restart GAMESS geometry optimization .inp files.
+A script to automatically construct restart [GAMESS](https://en.wikipedia.org/wiki/GAMESS_(US)) geometry optimization .inp files.
 
 There are two versions the script:
 1. If you run GAMESS on a supercomputer that uses [COBALT](https://www.anl.gov/mcs/cobalt-componentbased-lightweight-toolkit), use rstGO.py. This version adds the COBALT run queue ID to the restart .inp file to help you keep track of restart sequences.
